@@ -257,6 +257,12 @@
     [self checkDoneButton];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width = (collectionView.frame.size.width/3) - 3;
+    return CGSizeMake(width, width);
+}
+
 - (void)changeGroup:(KxMenuItem *)menu
 {
     for (ALAssetsGroup *group in self.groups) {
